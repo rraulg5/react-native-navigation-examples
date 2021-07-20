@@ -1,6 +1,15 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
+  avatar: {
+    borderRadius: 100,
+    height: 120,
+    width: 120,
+  },
+  avatarContainer: {
+    alignItems: 'center',
+    marginTop: 20,
+  },
   btnLg: {
     alignItems: 'center',
     backgroundColor: 'red',
@@ -17,6 +26,14 @@ const styles = StyleSheet.create({
   },
   globalMargin: {
     marginHorizontal: 20,
+  },
+  menuContainer: {
+    marginVertical: 30,
+    marginHorizontal: 50,
+  },
+  menuItem: { marginVertical: 10 },
+  menuText: {
+    fontSize: 20,
   },
   title: {
     fontSize: 30,
