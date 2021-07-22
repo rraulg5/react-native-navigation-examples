@@ -33,7 +33,9 @@ export const Page1 = ({ navigation }: Props) => {
         }}
       />
 
-      <Text>Navigation with props</Text>
+      <Text style={{ fontSize: 20, marginVertical: 20 }}>
+        Navigation with props
+      </Text>
       <View style={{ flexDirection: 'row' }}>
         <TouchableOpacity
           style={{ ...styles.btnLg, backgroundColor: '#FF9427' }}

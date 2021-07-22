@@ -16,6 +16,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { styles } from '../theme/appTheme';
+import { Tabs } from './BottomTabsNavigator';
 
 const Drawer = createDrawerNavigator();
 
@@ -27,7 +28,7 @@ export const DrawerNavigator = () => {
       drawerType={width >= 768 ? 'permanent' : 'front'}
       drawerContent={(props) => <DrawerMenu {...props} />}
     >
-      <Drawer.Screen name="StackNavigator" component={StackNavigator} />
+      <Drawer.Screen name="BottomTabsNavigator" component={Tabs} />
       <Drawer.Screen name="Settings" component={Settings} />
     </Drawer.Navigator>
   );
@@ -54,7 +55,7 @@ const DrawerMenu = ({
         <TouchableOpacity
           style={styles.menuItem}
           onPress={() => {
-            navigation.navigate('StackNavigator');
+            navigation.navigate('BottomTabsNavigator');
           }}
         >
           <Text style={styles.menuText}>Navigation</Text>
