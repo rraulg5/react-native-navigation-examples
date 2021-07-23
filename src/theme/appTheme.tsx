@@ -35,7 +35,10 @@ const styles = StyleSheet.create({
     marginVertical: 30,
     marginHorizontal: 50,
   },
-  menuItem: { marginVertical: 10 },
+  menuItem: {
+    flexDirection: 'row',
+    marginVertical: 10,
+  },
   menuText: {
     fontSize: 20,
   },

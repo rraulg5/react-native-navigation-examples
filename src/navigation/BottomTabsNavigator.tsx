@@ -3,13 +3,12 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { Tab1 } from '../screens/Tab1';
-import { Tab2 } from '../screens/Tab2';
-import { Tab3 } from '../screens/Tab3';
 import { StackNavigator } from './StackNavigator';
 import { colors } from '../theme/appTheme';
 import { Text } from 'react-native';
 import { Platform } from 'react-native';
-import { color } from 'react-native-reanimated';
+import { TopTabNavigator } from './TobTabsNavigator';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 export const Tabs = () => {
   return Platform.OS === 'ios' ? (
@@ -32,22 +31,26 @@ const BottomTabsNavigatorAndroid = () => {
 
           switch (route.name) {
             case 'Tab1':
-              icon = 'T1';
+              icon = 'home-outline';
               break;
             case 'Tab2':
-              icon = 'T2';
+              icon = 'leaf-outline';
               break;
             case 'StackNavigator':
-              icon = 'StNav';
+              icon = 'layers-outline';
               break;
           }
 
-          return <Text style={{ color }}>{icon}</Text>;
+          return (
+            <Text style={{ color, textAlign: 'center' }}>
+              <Icon name={icon} size={20} color="white" />
+            </Text>
+          );
         },
       })}
     >
       <BottomTabAndroid.Screen name="Tab1" component={Tab1} />
-      <BottomTabAndroid.Screen name="Tab2" component={Tab2} />
+      <BottomTabAndroid.Screen name="Tab2" component={TopTabNavigator} />
       <BottomTabAndroid.Screen
         name="StackNavigator"
         component={StackNavigator}
@@ -79,22 +82,26 @@ const BottomTabsNavigatoriOS = () => {
 
           switch (route.name) {
             case 'Tab1':
-              icon = 'T1';
+              icon = 'home-outline';
               break;
             case 'Tab2':
-              icon = 'T2';
+              icon = 'leaf-outline';
               break;
             case 'StackNavigator':
-              icon = 'StNav';
+              icon = 'layers-outline';
               break;
           }
 
-          return <Text style={{ color }}>{icon}</Text>;
+          return (
+            <Text style={{ color, textAlign: 'center' }}>
+              <Icon name={icon} size={20} color={colors.primary} />
+            </Text>
+          );
         },
       })}
     >
       <BottomTabiOS.Screen name="Tab1" component={Tab1} />
-      <BottomTabiOS.Screen name="Tab2" component={Tab2} />
+      <BottomTabiOS.Screen name="Tab2" component={TopTabNavigator} />
       <BottomTabiOS.Screen name="StackNavigator" component={StackNavigator} />
     </BottomTabiOS.Navigator>
   );

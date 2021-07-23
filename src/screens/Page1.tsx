@@ -3,7 +3,8 @@ import { DrawerScreenProps } from '@react-navigation/drawer';
 import React from 'react';
 import { useEffect } from 'react';
 import { Button, Text, TouchableOpacity, View } from 'react-native';
-import { styles } from '../theme/appTheme';
+import { styles, colors } from '../theme/appTheme';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 // interface Props extends StackScreenProps<any, any> {}
 interface Props extends DrawerScreenProps<any, any> {}
@@ -12,8 +13,11 @@ export const Page1 = ({ navigation }: Props) => {
   useEffect(() => {
     navigation.setOptions({
       headerLeft: () => (
-        <Button
-          title="Menu"
+        <Icon
+          name="reorder-three-outline"
+          size={50}
+          color={colors.primary}
+          style={{ marginLeft: 5 }}
           onPress={() => {
             navigation.toggleDrawer();
           }}

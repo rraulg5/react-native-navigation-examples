@@ -6,7 +6,6 @@ import {
   DrawerContentOptions,
   DrawerContentScrollView,
 } from '@react-navigation/drawer';
-import { StackNavigator } from './StackNavigator';
 import { Settings } from '../screens/Settings';
 import {
   useWindowDimensions,
@@ -15,8 +14,9 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
-import { styles } from '../theme/appTheme';
+import { styles, colors } from '../theme/appTheme';
 import { Tabs } from './BottomTabsNavigator';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const Drawer = createDrawerNavigator();
 
@@ -58,6 +58,12 @@ const DrawerMenu = ({
             navigation.navigate('BottomTabsNavigator');
           }}
         >
+          <Icon
+            name="rocket"
+            size={22}
+            color={colors.primary}
+            style={{ paddingRight: 10, alignContent: 'center' }}
+          />
           <Text style={styles.menuText}>Navigation</Text>
         </TouchableOpacity>
         <TouchableOpacity
@@ -66,6 +72,12 @@ const DrawerMenu = ({
             navigation.navigate('Settings');
           }}
         >
+          <Icon
+            name="settings-outline"
+            size={22}
+            color={colors.primary}
+            style={{ paddingRight: 10, alignContent: 'center' }}
+          />
           <Text style={styles.menuText}>Settings</Text>
         </TouchableOpacity>
       </View>
