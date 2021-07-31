@@ -1,14 +1,19 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { View, Text } from 'react-native';
-import { styles } from '../theme/appTheme';
+import { styles, colors } from '../theme/appTheme';
+import { TouchableIcon } from '../components/TouchableIcon';
 
 export const Tab1 = () => {
   return (
     <View style={styles.globalMargin}>
       <Text style={styles.title}>Iconos</Text>
       <Text>
-        <Icon name="rocket" size={80} color="#900" />
+        <TouchableIcon iconName="airplane-outline" />
+        <TouchableIcon iconName="attach-outline" />
+        <TouchableIcon iconName="bonfire-outline" />
+        <TouchableIcon iconName="calculator-outline" />
+        <TouchableIcon iconName="images-outline" />
       </Text>
     </View>
   );
